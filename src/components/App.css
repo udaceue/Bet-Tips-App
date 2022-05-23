@@ -1,0 +1,17 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+img.ui.image.medium {
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+div > .ui > header {
+  margin-top: 20px;
+  color: red;
+  padding: ;
+}
+
+h1.ui.header.sasbetHeader {
+  margin-top: 6.5rem;
+}
