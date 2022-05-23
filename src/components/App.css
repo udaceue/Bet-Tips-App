@@ -11,7 +11,33 @@ div > .ui > header {
   color: red;
   padding: ;
 }
+.logo {
+  margin: 0px 0px 10px 30px;
+}
+.ui.four.column.centered.grid.column {
+  margin-top: 30px;
+}
+figure {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+  border: thin silver solid;
+  margin: 0em;
+  padding: 0.1em;
+}
+.winnings {
+  width: 80%;
+}
 
-h1.ui.header.sasbetHeader {
-  margin-top: 6.5rem;
+@media (max-width: 1507px) {
+  .winnings {
+    width: 100%;
+  }
+  .ui.four.column.centered.grid.column {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 393px);
+  }
 }

@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./Header";
 import Menu from "./Menu";
+import Home from "./Home";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
         <Header />
         <Menu />
       </header>
+
+      <Home />
     </div>
   );
 }
