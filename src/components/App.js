@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Header";
 import Menu from "./Menu";
 import Home from "./Home";
+import Tipsters from "./Tipsters";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </header>
 
       <Home />
+      <Tipsters />
     </div>
   );
 }

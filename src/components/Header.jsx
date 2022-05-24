@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className="ui grid">
       <div className="row">
-        <h1 className="ui header">
+        <h1 className="ui header logoMargin">
           <img className="ui image logo" src={logo} alt="logo" />
           <div className="content">
             SASBET

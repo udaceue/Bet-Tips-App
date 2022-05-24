@@ -11,8 +11,9 @@ div > .ui > header {
   color: red;
   padding: ;
 }
-.logo {
-  margin: 0px 0px 10px 30px;
+h1.ui.header.logoMargin {
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 .ui.four.column.centered.grid.column {
   margin-top: 30px;
@@ -27,17 +28,37 @@ figure {
   margin: 0em;
   padding: 0.1em;
 }
+.ui.image {
+  margin: auto;
+}
+.winningsimg {
+  width: 100%;
+}
 .winnings {
-  width: 80%;
+  margin-bottom: 2.5rem;
+}
+/* WHO WE ARE IN HOME SECTION */
+.ui.four.column.centered.grid.who > .column {
+  background-color: brown;
 }
 
+/* ====================
+    MEDIA QUERIES
+==================== */
+
 @media (max-width: 1507px) {
-  .winnings {
+  .winningsimg {
     width: 100%;
   }
-  .ui.four.column.centered.grid.column {
-    margin-top: 15px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 393px);
+
+  /* WHO WE ARE IN HOME SECTION */
+  .ui.four.column.centered.grid.who > .column {
+    flex-grow: 2;
+  }
+}
+@media (max-width: 1296px) {
+  .winnings {
+    flex-grow: 2;
+    flex-basis: auto;
   }
 }
