@@ -35,6 +35,10 @@ function Home() {
           </div>
         </div>
       </div>
+      <h2 className="ui dividing header centered">
+        <i className="smile icon" />
+        Our Team
+      </h2>
     </div>
   );
 }

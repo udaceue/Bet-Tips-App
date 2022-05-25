@@ -41,6 +41,16 @@ figure {
 .ui.four.column.centered.grid.who > .column {
   background-color: brown;
 }
+.ui.link.cards {
+  background-color: darkslategrey;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.ui.dividing.header {
+  background-color: aliceblue;
+  padding: 15px;
+}
 
 /* ====================
     MEDIA QUERIES
