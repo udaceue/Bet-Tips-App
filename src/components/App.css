@@ -52,6 +52,25 @@ figure {
   padding: 15px;
 }
 
+iframe#embed {
+  height: 490px;
+  border: 0px none;
+  width: 619px;
+  margin-top: 0px;
+  margin-left: 240px;
+}
+.betTips {
+  height: 490px;
+  border: 0px none;
+  width: 619px;
+  margin-top: -0px;
+  margin-left: -24px;
+}
+.betTipsIframe {
+  overflow: hidden;
+  margin-top: 0px;
+  margin-left: -25px;
+}
 /* ====================
     MEDIA QUERIES
 ==================== */

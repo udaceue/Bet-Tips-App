@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./components/App";
 import Menu from "./components/Menu";
+import BetTips from "./components/BetTips";
+import Tools from "./components/Tools";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,6 +13,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="menu" element={<Menu />} />
+      <Route path="BetTips" element={<BetTips />} />
+      <Route path="Tools" element={<Tools />} />
     </Routes>
   </BrowserRouter>
 );

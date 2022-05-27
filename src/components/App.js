@@ -1,10 +1,11 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./Header";
-import Menu from "./Menu";
+
 import Home from "./Home";
 import Tipsters from "./Tipsters";
 import items from "./data";
+import Header from "./Header";
+import Menu from "./Menu";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
