@@ -71,6 +71,17 @@ iframe#embed {
   margin-top: 0px;
   margin-left: -25px;
 }
+.toolsContent {
+  margin-top: 2rem;
+}
+.textCenter {
+  text-align: center;
+}
+.fullwidth {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 /* ====================
     MEDIA QUERIES
 ==================== */
