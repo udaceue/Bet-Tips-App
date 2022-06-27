@@ -81,6 +81,9 @@ iframe#embed {
   width: 100%;
   margin-bottom: 10px;
 }
+.segmentSpace {
+  margin-bottom: 2rem;
+}
 
 /* ====================
     MEDIA QUERIES
