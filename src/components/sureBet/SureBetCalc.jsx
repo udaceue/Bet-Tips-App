@@ -6,6 +6,9 @@ function SureBetCalc() {
   const [secondRay, setSecondRay] = useState(0);
   const [stake, setStake] = useState(0);
   const [finalRay, setFinalRay] = useState(0);
+  const [homeSureStake, setHomeSureStake] = useState(0);
+  // eslint-disable-next-line no-unused-vars
+  const [awaySureStake, setAwaySureStake] = useState(0);
 
   const handleHomeValue = (event) => {
     const home = event.target.value;
@@ -43,12 +46,24 @@ function SureBetCalc() {
   };
 
   // eslint-disable-next-line no-shadow
-  const checkSureBet = (xerr) => {
-    if (xerr >= 0) {
+  const checkSureBet = (x) => {
+    if (x >= 0) {
       console.log("doesnt exists");
     } else {
-      console.log("go for it");
+      const firstCheck = 1 / (1 / firstRay + 1 / secondRay);
+      const stakeForHome = (stake * firstCheck) / firstRay;
+      setHomeSureStake(stakeForHome);
+      console.log(stakeForHome);
+      const stakeForAway = (stake * firstCheck) / secondRay;
+      setAwaySureStake(stakeForAway);
+
+      console.log(stakeForAway);
     }
+  };
+
+  const FinalHomeStake = () => {
+    const lastHomeStake = (stake * homeSureStake) / 100;
+    console.log(`You need to bet ${lastHomeStake} for home`);
   };
 
   useEffect(() => {
@@ -107,7 +122,10 @@ function SureBetCalc() {
           </label>
           <div className="column">
             <button
-              onClick={() => checkSureBet(finalRay)}
+              onClick={() => {
+                checkSureBet(finalRay);
+                FinalHomeStake();
+              }}
               className="ui fluid huge teal submit button"
             >
               Check
