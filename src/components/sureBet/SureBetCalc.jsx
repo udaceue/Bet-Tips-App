@@ -1,25 +1,38 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+/* eslint-disable react/button-has-type */
+import React, { useState, useEffect } from "react";
 
-function DecimalOdds() {
+function SureBetCalc() {
   const [firstRay, setFirstRay] = useState(0);
   const [secondRay, setSecondRay] = useState(0);
+  const [stake, setStake] = useState(0);
   const [finalRay, setFinalRay] = useState(0);
 
   const handleHomeValue = (event) => {
     const home = event.target.value;
-    const homeValue = parseInt(home, 10);
-    setFirstRay(home);
-    console.log(homeValue);
+    if (home) {
+      const homeValue = parseFloat(home, 10);
+      setFirstRay(homeValue);
+      console.log(homeValue);
+    }
     return firstRay;
   };
 
   const handleAwayValue = (event) => {
     const away = event.target.value;
-    const awayValue = parseInt(away, 10);
-    setSecondRay(away);
-    console.log(awayValue);
+    if (away) {
+      const awayValue = parseFloat(away, 10);
+      setSecondRay(awayValue);
+      console.log(awayValue);
+    }
     return secondRay;
+  };
+
+  const handleStake = (event) => {
+    const stakeValue = event.target.value;
+    const finalStakeValue = parseInt(stakeValue, 10);
+    setStake(finalStakeValue);
+    console.log(finalStakeValue);
+    return firstRay;
   };
 
   const finalRakeValue = () => {
@@ -29,16 +42,25 @@ function DecimalOdds() {
     return score;
   };
 
+  // eslint-disable-next-line no-shadow
+  const checkSureBet = (xerr) => {
+    if (xerr >= 0) {
+      console.log("doesnt exists");
+    } else {
+      console.log("go for it");
+    }
+  };
+
   useEffect(() => {
     finalRakeValue();
-  });
+  }, [firstRay, secondRay]);
 
   return (
     <div className="ui container">
       <div className="ui equal width grid">
         <div className="column">
-          <div className="ui huge header textCenter">Two way rake</div>
-          <p className="textCenter">Type the odds on the teams</p>
+          <div className="ui huge header textCenter">Sure Bet</div>
+          <p className="textCenter">Check if sure bet is possible</p>
         </div>
         <div className="equal width row">
           <div className="column">
@@ -60,6 +82,16 @@ function DecimalOdds() {
               onChange={handleAwayValue}
             />
           </div>
+          <div className="column">
+            <input
+              type="number"
+              placeholder="Stake for bets"
+              step="0.1"
+              className="fullwidth"
+              onChange={handleStake}
+              value={stake}
+            />
+          </div>
         </div>
         <div className="column">
           <label htmlFor="FinalRake">
@@ -73,10 +105,19 @@ function DecimalOdds() {
               value={finalRay}
             />
           </label>
+          <div className="column">
+            <button
+              onClick={() => checkSureBet(finalRay)}
+              className="ui fluid huge teal submit button"
+            >
+              Check
+            </button>
+          </div>
+          <h3>XD</h3>
         </div>
       </div>
     </div>
   );
 }
 
-export default DecimalOdds;
+export default SureBetCalc;

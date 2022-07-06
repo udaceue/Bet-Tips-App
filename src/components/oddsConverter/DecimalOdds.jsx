@@ -5,8 +5,8 @@ function DecimalOdds() {
   const [disabled, setDisabled] = useState(false);
 
   const getValue = (event) => {
-    const sraka = event.target.value;
-    return sraka;
+    const finalValue = event.target.value;
+    return finalValue;
   };
 
   const convertToPropability = (event) => {
