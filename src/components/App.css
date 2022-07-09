@@ -84,6 +84,9 @@ iframe#embed {
 .segmentSpace {
   margin-bottom: 2rem;
 }
+.greenText {
+  background-color: rgb(26, 149, 55);
+}
 
 /* ====================
     MEDIA QUERIES
