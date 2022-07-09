@@ -2,13 +2,11 @@
 import React, { useState, useEffect } from "react";
 
 function SureBetCalc() {
-  const [firstRay, setFirstRay] = useState(0);
-  const [secondRay, setSecondRay] = useState(0);
-  const [stake, setStake] = useState(0);
-  const [finalRay, setFinalRay] = useState(0);
-  const [homeSureStake, setHomeSureStake] = useState(0);
+  const [firstRay, setFirstRay] = useState(0); // home
+  const [secondRay, setSecondRay] = useState(0); // away
+  const [stake, setStake] = useState(0); // stake
+  const [finalRay, setFinalRay] = useState(0); // rake
   // eslint-disable-next-line no-unused-vars
-  const [awaySureStake, setAwaySureStake] = useState(0);
 
   const handleHomeValue = (event) => {
     const home = event.target.value;
@@ -40,30 +38,38 @@ function SureBetCalc() {
 
   const finalRakeValue = () => {
     const score = (1 / firstRay) * 100 + (1 / secondRay) * 100 - 100;
-    setFinalRay(score);
+    const scoreAbs = Math.abs(score);
+    setFinalRay(scoreAbs);
     console.log(finalRay);
-    return score;
+    return scoreAbs;
   };
 
   // eslint-disable-next-line no-shadow
-  const checkSureBet = (x) => {
-    if (x >= 0) {
-      console.log("doesnt exists");
-    } else {
-      const firstCheck = 1 / (1 / firstRay + 1 / secondRay);
-      const stakeForHome = (stake * firstCheck) / firstRay;
-      setHomeSureStake(stakeForHome);
-      console.log(stakeForHome);
-      const stakeForAway = (stake * firstCheck) / secondRay;
-      setAwaySureStake(stakeForAway);
+  const checkSureBetHome = () => {
+    const firstCheck = 1 / (1 / firstRay + 1 / secondRay);
+    const stakeForHome = (stake * firstCheck) / firstRay;
+    console.log(`${stakeForHome} stake for Home`);
 
-      console.log(stakeForAway);
-    }
+    return stakeForHome;
+  };
+
+  const checkSureBetAway = () => {
+    const firstCheck = 1 / (1 / firstRay + 1 / secondRay);
+    const stakeForAway = (stake * firstCheck) / secondRay;
+    console.log(`${stakeForAway} stake for Away`);
+    return stakeForAway;
   };
 
   const FinalHomeStake = () => {
-    const lastHomeStake = (stake * homeSureStake) / 100;
-    console.log(`You need to bet ${lastHomeStake} for home`);
+    const lastHomeStake = (stake * checkSureBetHome()) / 100;
+    console.log(`${lastHomeStake} is equal to`);
+    return lastHomeStake;
+  };
+
+  const exam = () => {
+    checkSureBetHome(finalRay);
+    checkSureBetAway(finalRay);
+    FinalHomeStake();
   };
 
   useEffect(() => {
@@ -120,18 +126,19 @@ function SureBetCalc() {
               value={finalRay}
             />
           </label>
+
           <div className="column">
             <button
               onClick={() => {
-                checkSureBet(finalRay);
-                FinalHomeStake();
+                exam();
               }}
               className="ui fluid huge teal submit button"
             >
               Check
             </button>
           </div>
-          <h3>XD</h3>
+          <h3>{checkSureBetHome()}</h3>
+          <h3>{checkSureBetAway()}</h3>
         </div>
       </div>
     </div>
