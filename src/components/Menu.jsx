@@ -59,6 +59,9 @@ function Menu() {
           <div className="right item">
             <div className="ui input">
               <input type="text" placeholder="Search..." />
+              <a className="item">
+                <i className="sign in alternate icon" /> Log In
+              </a>
             </div>
           </div>
         </div>

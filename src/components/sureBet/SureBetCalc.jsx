@@ -38,7 +38,7 @@ function SureBetCalc() {
 
   const finalRakeValue = () => {
     const score = (1 / firstRay) * 100 + (1 / secondRay) * 100 - 100;
-    const scoreAbs = Math.abs(score);
+    const scoreAbs = score;
     setFinalRay(scoreAbs);
     console.log(finalRay);
     return scoreAbs;
@@ -75,8 +75,8 @@ function SureBetCalc() {
   };
 
   const exam = () => {
-    checkSureBetHome(finalRay);
-    checkSureBetAway(finalRay);
+    checkSureBetHome();
+    checkSureBetAway();
     FinalHomeStake();
   };
 
@@ -138,11 +138,13 @@ function SureBetCalc() {
             <p>Profit in percentages</p>
             <input
               id="FinalRake"
-              type="number"
+              type="text"
               placeholder="Rake of provider"
               step="0.1"
               className="fullwidth"
-              value={finalRay}
+              value={
+                finalRay < 0 ? Math.abs(finalRay) : "SureBet doesn't exists"
+              }
             />
           </label>
 
